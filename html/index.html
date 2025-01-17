@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深層強化学習を用いた複雑形状交差点における交通信号制御の研究</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="sec-app">
+        <div class="sec-header part">ヘッダーセクション</div>
+        <div class="sec-main">
+            <div class="sec-left">
+                <!-- 画像をクリックして動画の進度を変える -->
+                <video id="simVideo" controls>
+                    <source src="../movs/convert_test.mp4" type="video/mp4">
+                </video>
+                <!-- <div class="chart_container">
+                    <canvas id="rewardChart"></canvas>
+                </div> -->
+                <div class="image-container" id="imgContainer">
+                    <img src="../imgs/plot_1.png" alt="プロット画像" id="pltImg">
+                    <div id="darkOverlay" class="dark-overlay"></div> <!-- 黒いオーバーレイ -->
+                </div>
+            </div>
+            <div class="sec-right">
+                <div class="sec-settings part">設定セクション</div>
+                <div class="sec-sq-mov part">
+                    <video src="../movs/convert_test.mp4" id="simVideoSquare"></video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
