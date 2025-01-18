@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>深層強化学習を用いた複雑形状交差点における交通信号制御の研究</title>
+    <title>深層強化学習による交通信号制御のシミュレーション</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="sec-app">
-        <div class="sec-header part">ヘッダーセクション</div>
+        <div class="sec-header part">
+            <div class="title">深層強化学習による交通信号制御のシミュレーション</div>
+            <div class="type">
+                <div id="fixed-button">現行</div>
+                <div id="drl-button" class="selected">深層強化学習</div>
+            </div>
+        </div>
         <div class="sec-main">
             <div class="sec-left">
                 <div class="sim-video-container">
                     <!-- 画像をクリックして動画の進度を変える -->
-                    <video id="simVideo" controls>
-                        <source src="../movs/ehira_a_total_edited.mov" type="video/mp4">
+                    <video id="simVideo">
+                        <source src="../movs/ehira_a_total_edited.mov" id="simVideo-source" type="video/mp4">
                     </video>
                 </div>
                 <!-- <div class="chart_container">
@@ -32,28 +38,28 @@
                         <span>こちらから動画のプロパティを操作できます</span>
                     </div>
                     <div class="video-controller">
-                        <div class="forward">
+                        <div class="forward" onclick="skipForward()">
                             <img src="../imgs/img_skip_forward.svg" alt="10秒前">
                         </div>
-                        <div class="play">
-                            <span class="play-bg">
+                        <div class="play" onclick="togglePlayPause()">
+                            <span class="play-bg" id="play">
                                 <img src="../imgs/img_play.svg" alt="再生">
                             </span>
                         </div>
-                        <div class="later">
+                        <div class="later" onclick="skipLater()">
                             <img src="../imgs/img_skip_later.svg" alt="10秒後">
                         </div>
                     </div>
                     <div class="speed-controller">
-                        <div>×1</div>
-                        <div>×3</div>
-                        <div>×5</div>
-                        <div>×10</div>
+                        <div data-speed="0.33">×1</div>
+                        <div data-speed="1" class="selected">×3</div>
+                        <div data-speed="2">×6</div>
+                        <div data-speed="4">×10</div>
                     </div>
                 </div>
                 <div class="sec-sq-mov part">
-                    <video id="simVideoSquare" controls>
-                        <source src="../movs/ehira_a_total_edited.mov">
+                    <video id="simVideoSquare">
+                        <source src="../movs/ehira_a_total_edited.mov" id="simVideoSquare-source">
                     </video>
                 </div>
             </div>
