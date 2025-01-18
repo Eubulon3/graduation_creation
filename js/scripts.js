@@ -99,12 +99,11 @@ function changeVideo(file_path, selectedButton){
     video.load();
     video_sq.load();
 
+    dark_overlay.style.width = `4%`;
+
     fixed_button.classList.remove("selected");
     drl_button.classList.remove("selected");
     
     // クリックされたボタンに.selectedクラスを追加
     selectedButton.classList.add("selected");
 }
-
-
-
