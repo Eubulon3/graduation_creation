@@ -107,11 +107,11 @@ img, video {
   flex-direction: column;
 }
 .sec-app .sec-main .sec-right .sec-settings .disc span:nth-child(1) {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
 }
 .sec-app .sec-main .sec-right .sec-settings .disc span:nth-child(2) {
-  font-size: 10px;
+  font-size: 14px;
 }
 .sec-app .sec-main .sec-right .sec-settings .video-controller {
   width: 100%;
@@ -146,6 +146,9 @@ img, video {
 }
 .sec-app .sec-main .sec-right .sec-settings .video-controller div:hover {
   background-color: #2e2f32;
+}
+.sec-app .sec-main .sec-right .sec-settings .video-controller div .img-forward, .sec-app .sec-main .sec-right .sec-settings .video-controller div .img-later {
+  transform: scale(1.5);
 }
 .sec-app .sec-main .sec-right .sec-settings .speed-controller {
   display: flex;
@@ -227,10 +230,10 @@ img, video {
 }
 .sec-app .sec-main .sec-left .image-container .dark-overlay {
   position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 0%; /* 初期状態では幅0に設定 */
+  top: 8%;
+  left: 10%;
+  height: 60%;
+  width: 88%; /* 初期状態では幅0に設定 */
   background-color: rgba(0, 0, 0, 0.5); /* 黒色の半透明 */
   transition: width 0.1s; /* アニメーションを追加 */
 }/*# sourceMappingURL=style.css.map */

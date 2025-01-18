@@ -19,14 +19,30 @@ drl_button.addEventListener("click", (e) => {
 img_container.addEventListener("click", (e) => {
     // 画像の位置とサイズを取得
     const rect = plt_img.getBoundingClientRect();   
-    const clickX = e.clientX - rect.left; // クリックした位置のX座標
     const imageWidth = rect.width;        // 画像の幅
-    const videoDuration = video.duration; // 動画の長さ
+    const imageHeight = rect.height;
+    const clickX = e.clientX - rect.left; // クリックした位置のX座標
+    const clickY = e.clientY - rect.top;
+    
+    const minX = imageWidth * 0.14;
+    const maxX = imageWidth * 0.945;
+    const minY = imageHeight * 0.08;
+    const maxY = imageHeight * 0.7;
+    
+    const rangeLeft = rect.left + minX;
+    const rangeRight = rect.left + maxX;
+    const range = rangeRight - rangeLeft
+    const clickX_range = e.clientX - rangeLeft; // クリックした位置のX座標
+    
+    if (clickX >= minX && clickX <= maxX && clickY >= minY && clickY <= maxY) {
+        const videoDuration = video.duration; // 動画の長さ
+        
+        // クリック位置を動画の時間にマッピング
+        const newTime = ((clickX_range) / range) * videoDuration;
+        video.currentTime = newTime; // 動画の再生位置を設定
+        video_sq.currentTime = newTime
+    }
 
-    // クリック位置を動画の時間にマッピング
-    const newTime = (clickX / imageWidth) * videoDuration;
-    video.currentTime = newTime; // 動画の再生位置を設定
-    video_sq.currentTime = newTime
 });
 
 // 動画の進行に合わせてオーバーレイの幅を調整
@@ -34,11 +50,12 @@ video.addEventListener('timeupdate', function() {
     const duration = video.duration;
     const currentTime = video.currentTime;
     
-    // 動画の進行具合に基づいて右側が暗くなるように変更
-    const percentage = (currentTime / duration) * 100;
+    // 動画の進行具合に基づいて左側が暗くなるように変更
+    const percentage = (currentTime / duration) * 80.5;
     
     // 右側が暗くなるようにオーバーレイの幅を設定
-    dark_overlay.style.width = `${100 - percentage}%`;
+    // dark_overlay.style.width = `${84.5 - percentage}%`;
+    dark_overlay.style.width = `${4 + percentage}%`;
 });
 
 speed_buttons.forEach(btn => {

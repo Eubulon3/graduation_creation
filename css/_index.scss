@@ -97,11 +97,11 @@ img, video{
                     display: flex;
                     flex-direction: column;
                     span:nth-child(1){
-                        font-size: 16px;
+                        font-size: 18px;
                         font-weight: bold;
                     }
                     span:nth-child(2){
-                        font-size: 10px;
+                        font-size: 14px;
                     }
                 }
                 .video-controller{
@@ -135,6 +135,9 @@ img, video{
                         }
                         &:hover{
                             background-color: #2e2f32;
+                        }
+                        .img-forward, .img-later{
+                            transform: scale(1.5);
                         }
                     }
                 }
@@ -215,10 +218,10 @@ img, video{
                 background-color: #38393d;
                 .dark-overlay {
                     position: absolute;
-                    top: 0;
-                    right: 0;
-                    height: 100%;
-                    width: 0%; /* 初期状態では幅0に設定 */
+                    top: 8%;
+                    left: 10%;
+                    height: 60%;
+                    width: 88%; /* 初期状態では幅0に設定 */
                     background-color: rgba(0, 0, 0, 0.5); /* 黒色の半透明 */
                     transition: width 0.1s; /* アニメーションを追加 */
                 }

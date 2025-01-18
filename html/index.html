@@ -23,9 +23,6 @@
                         <source src="../movs/ehira_a_total_edited.mov" id="simVideo-source" type="video/mp4">
                     </video>
                 </div>
-                <!-- <div class="chart_container">
-                    <canvas id="rewardChart"></canvas>
-                </div> -->
                 <div class="image-container" id="imgContainer">
                     <img src="../imgs/plot_1.png" alt="プロット画像" id="pltImg">
                     <div id="darkOverlay" class="dark-overlay"></div> <!-- 黒いオーバーレイ -->
@@ -39,7 +36,7 @@
                     </div>
                     <div class="video-controller">
                         <div class="forward" onclick="skipForward()">
-                            <img src="../imgs/img_skip_forward.svg" alt="10秒前">
+                            <img class="img-forward" src="../imgs/img_skip_forward.svg" alt="10秒前">
                         </div>
                         <div class="play" onclick="togglePlayPause()">
                             <span class="play-bg" id="play">
@@ -47,7 +44,7 @@
                             </span>
                         </div>
                         <div class="later" onclick="skipLater()">
-                            <img src="../imgs/img_skip_later.svg" alt="10秒後">
+                            <img class="img-later" src="../imgs/img_skip_later.svg" alt="10秒後">
                         </div>
                     </div>
                     <div class="speed-controller">
