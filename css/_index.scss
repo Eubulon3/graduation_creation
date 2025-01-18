@@ -4,6 +4,7 @@ html, body {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    color: white;
 }
 img, video{
     max-width: 100%;
@@ -41,12 +42,81 @@ img, video{
             align-items: center;
         }
         .sec-right{
-            flex-grow: 1;
             gap: 10px;
             position: relative;
+            flex-grow: 1;
             .sec-settings{
+                box-sizing: border-box;
                 width: 100%;
-                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                padding: 25% 10%;
+                gap: 3rem;
+                overflow: hidden;
+                .disc{
+                    width: 100%;
+                    text-align: left;
+                    display: flex;
+                    flex-direction: column;
+                    span:nth-child(1){
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                    span:nth-child(2){
+                        font-size: 10px;
+                    }
+                }
+                .video-controller{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    div{
+                        width: 100%;
+                        height: 3rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .play-bg{
+                            width: auto;
+                            height: 100%;
+                            background-color: #fa894e;
+                            padding: 1rem;
+                            border-radius: 100%;
+                            aspect-ratio: 1/1;
+                            color: #2e2f32;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+                .speed-controller{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: #2e2f32;
+                    width: 100%;
+                    border-radius: 3px;
+                    div{
+                        flex-grow: 1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0.7rem 0;
+                        margin: 5px;
+                        border-radius: 2px;
+                        &:nth-child(2){
+                            background-color: #fa894e;
+                        }
+                    }
+                }
             }
             .sec-sq-mov{
                 position: relative;
@@ -65,7 +135,7 @@ img, video{
             }
         }
         .sec-left{
-            flex-grow: 3.5;
+            flex-grow: 4;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -73,9 +143,9 @@ img, video{
             gap: 10px;
             flex-basis: 0;
             overflow: hidden;
-            #simVideo{
+            .sim-video-container{
                 position: relative;
-                flex-grow: 1;
+                flex-grow: 2;
                 width: 100%;
                 height: auto;
                 display: flex;
@@ -83,7 +153,7 @@ img, video{
                 justify-content: center;
                 align-items: center;
                 overflow: hidden;
-                video{
+                #simVideo{
                     position: absolute;
                     width: 100%;
                     height: 100%;
@@ -96,7 +166,7 @@ img, video{
                 width: 100%;
                 height: auto;
                 cursor: pointer;
-                flex-grow: 1;
+                background-color: #38393d;
                 .dark-overlay {
                     position: absolute;
                     top: 0;

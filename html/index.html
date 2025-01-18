@@ -11,10 +11,12 @@
         <div class="sec-header part">ヘッダーセクション</div>
         <div class="sec-main">
             <div class="sec-left">
-                <!-- 画像をクリックして動画の進度を変える -->
-                <video id="simVideo" controls>
-                    <source src="../movs/convert_test.mp4" type="video/mp4">
-                </video>
+                <div class="sim-video-container">
+                    <!-- 画像をクリックして動画の進度を変える -->
+                    <video id="simVideo" controls>
+                        <source src="../movs/ehira_a_total_edited.mov" type="video/mp4">
+                    </video>
+                </div>
                 <!-- <div class="chart_container">
                     <canvas id="rewardChart"></canvas>
                 </div> -->
@@ -24,9 +26,35 @@
                 </div>
             </div>
             <div class="sec-right">
-                <div class="sec-settings part">設定セクション</div>
+                <div class="sec-settings part">
+                    <div class="disc">
+                        <span>操作画面</span>
+                        <span>こちらから動画のプロパティを操作できます</span>
+                    </div>
+                    <div class="video-controller">
+                        <div class="forward">
+                            <img src="../imgs/img_skip_forward.svg" alt="10秒前">
+                        </div>
+                        <div class="play">
+                            <span class="play-bg">
+                                <img src="../imgs/img_play.svg" alt="再生">
+                            </span>
+                        </div>
+                        <div class="later">
+                            <img src="../imgs/img_skip_later.svg" alt="10秒後">
+                        </div>
+                    </div>
+                    <div class="speed-controller">
+                        <div>×1</div>
+                        <div>×3</div>
+                        <div>×5</div>
+                        <div>×10</div>
+                    </div>
+                </div>
                 <div class="sec-sq-mov part">
-                    <video src="../movs/convert_test.mp4" id="simVideoSquare"></video>
+                    <video id="simVideoSquare" controls>
+                        <source src="../movs/ehira_a_total_edited.mov">
+                    </video>
                 </div>
             </div>
         </div>

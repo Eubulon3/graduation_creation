@@ -1,11 +1,12 @@
-const plt_img = document.getElementById("pltImg")
-const video = document.getElementById("simVideo")
+const plt_img = document.getElementById("pltImg");
+const video = document.getElementById("simVideo");
+const video_sq = document.getElementById("simVideoSquare");
 const dark_overlay = document.getElementById("darkOverlay");
 const img_container = document.getElementById("imgContainer");
 
 img_container.addEventListener("click", (e) => {
     // 画像の位置とサイズを取得
-    const rect = plt_img.getBoundingClientRect();
+    const rect = plt_img.getBoundingClientRect();   
     const clickX = e.clientX - rect.left; // クリックした位置のX座標
     const imageWidth = rect.width;        // 画像の幅
     const videoDuration = video.duration; // 動画の長さ
@@ -13,6 +14,7 @@ img_container.addEventListener("click", (e) => {
     // クリック位置を動画の時間にマッピング
     const newTime = (clickX / imageWidth) * videoDuration;
     video.currentTime = newTime; // 動画の再生位置を設定
+    video_sq.currentTime = newTime
 });
 
 // 動画の進行に合わせてオーバーレイの幅を調整
