@@ -1,0 +1,5 @@
+<div class="image-container" id="imgContainer">
+    <img src="../imgs/plot_1.png" alt="プロット画像" id="pltImg">
+    <div id="darkOverlay" class="dark-overlay"></div> <!-- 黒いオーバーレイ -->
+    <div class="cross hide"></div>
+</div>

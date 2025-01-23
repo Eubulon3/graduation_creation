@@ -185,10 +185,12 @@ img, video {
 }
 .sec-app .sec-main .sec-right .sec-sq-mov #simVideoSquare {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 280%;
+  height: 280%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .sec-app .sec-main .sec-left {
   flex-grow: 4;
@@ -214,7 +216,7 @@ img, video {
 }
 .sec-app .sec-main .sec-left .sim-video-container #simVideo {
   position: absolute;
-  width: 100%;
+  width: auto;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -236,4 +238,15 @@ img, video {
   width: 4%; /* 初期状態では幅0に設定 */
   background-color: rgba(0, 0, 0, 0.5); /* 黒色の半透明 */
   transition: width 0.1s; /* アニメーションを追加 */
+}
+.sec-app .sec-main .sec-left .image-container .crosslines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.hide {
+  visibility: hidden;
 }/*# sourceMappingURL=style.css.map */

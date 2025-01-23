@@ -11,28 +11,29 @@
         <div class="sec-header part">
             <div class="title">深層強化学習による交通信号制御のシミュレーション</div>
             <div class="type">
-                <div id="fixed-button">現行</div>
+                <div id="fixed-button">従来制御</div>
                 <div id="drl-button" class="selected">深層強化学習</div>
             </div>
         </div>
         <div class="sec-main">
             <div class="sec-left">
-                <div class="sim-video-container">
+                <div class="sim-video-container part">
                     <!-- 画像をクリックして動画の進度を変える -->
                     <video id="simVideo">
-                        <source src="../movs/ehira_a_total_edited.mov" id="simVideo-source" type="video/mp4">
+                        <source src="../movs/ehira_a_total_edited.mp4" id="simVideo-source" type="video/mp4">
                     </video>
                 </div>
                 <div class="image-container" id="imgContainer">
                     <img src="../imgs/plot_1.png" alt="プロット画像" id="pltImg">
                     <div id="darkOverlay" class="dark-overlay"></div> <!-- 黒いオーバーレイ -->
+                    <img src="../imgs/img_crosslines.png" alt="" id="crosslines" class="crosslines hide">
                 </div>
             </div>
             <div class="sec-right">
                 <div class="sec-settings part">
                     <div class="disc">
-                        <span>操作画面</span>
-                        <span>こちらから動画のプロパティを操作できます</span>
+                        <span>メディアコントロール</span>
+                        <span>こちらから動画の再生制御が可能です</span>
                     </div>
                     <div class="video-controller">
                         <div class="forward" onclick="skipForward()">
@@ -48,15 +49,15 @@
                         </div>
                     </div>
                     <div class="speed-controller">
-                        <div data-speed="0.33">×1</div>
-                        <div data-speed="1" class="selected">×3</div>
-                        <div data-speed="2">×6</div>
-                        <div data-speed="4">×12</div>
+                        <div data-speed="0.1">×3</div>
+                        <div data-speed="1" class="selected">×30</div>
+                        <div data-speed="2">×60</div>
+                        <div data-speed="4">×120</div>
                     </div>
                 </div>
                 <div class="sec-sq-mov part">
                     <video id="simVideoSquare">
-                        <source src="../movs/ehira_a_total_edited.mov" id="simVideoSquare-source">
+                        <source src="../movs/ehira_a_total_edited.mp4" id="simVideoSquare-source">
                     </video>
                 </div>
             </div>
